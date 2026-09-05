@@ -1,0 +1,36 @@
+INVITACIONES LUMINARIA — contenido del repositorio
+==================================================
+
+index.html               La página de ventas
+panel-lum-7k3.html       Tu panel interno (el PIN lo sabes tú)
+logo-horizontal.png      Logo de la barra y el pie
+logo-vertical.png        Logo de la portada
+
+ejemplos/
+  xv-1.html              XV de Ximena (tuya)
+  xv-2.html              XV de Meilyn (tuya)
+  boda.html              Boda (fotos de Adrián y Lizbeth)
+  bautizo.html  cumpleanos.html  baby.html
+  graduacion.html  comunion.html  empresa.html
+                         Muestras provisionales, para reemplazar
+                         conforme hagas las tuyas
+  medios/xv-1/           Fotos y canción de Ximena
+  medios/xv-2/           Fotos y canción de Meilyn
+  fotos/                 Fondos de las muestras provisionales
+  audio/                 Aquí van las canciones de las muestras
+
+QUE NO VA AQUI
+--------------
+El archivo Codigo.gs NUNCA se sube a GitHub. Vive solo dentro
+de Apps Script, porque contiene tu CLABE, tu PIN y tu llave de
+OpenAI. Si lo subes, queda público.
+
+El archivo INSTALACION.md tampoco: menciona tu PIN.
+
+Este LEEME.txt tampoco hace falta subirlo. Es para ti.
+
+SI CAMBIAS EL NOMBRE DEL PANEL
+------------------------------
+El archivo se llama panel-lum-7k3.html a propósito, para que
+nadie lo adivine. Si lo renombras, no lo enlaces desde el
+index: guarda la dirección en tus marcadores.
