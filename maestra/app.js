@@ -83,6 +83,10 @@ ${c("portada").length?`- Foto de portada: ${c("portada").map(h=>h.nombre).join("
 `:""}${c("referencias").length?`- Referencias de dise\xF1o (${c("referencias").length}): m\xEDralas con atenci\xF3n y toma de ah\xED colores, estilo y ambiente
 `:""}${o.length?"":`- (sin archivos todav\xEDa)
 `}
+## Mismo estilo en todo (muy importante)
+- Todo lo del evento va en la carpeta \`${s}/\`: la invitaci\xF3n, sus fotos y m\xFAsica, y tambi\xE9n el estilo de las apps.
+- Crea \`${s}/tema.css\` con los MISMOS colores y letras de la invitaci\xF3n (las variables que explica la skill). Con \xE9l ${[n.anfitriona&&"ANFITRIONA",n.portera&&"PORTERA",n.album&&"el \xE1lbum MEMORI-A"].filter(Boolean).join(", ")||"las apps del evento"} se ver\xE1n igual que la invitaci\xF3n.
+${n.pases?"- El pase QR debe ser ID\xC9NTICO a la invitaci\xF3n (mismo fondo, adornos, colores y letras), dibujado en la propia invitaci\xF3n con `conectarEvento` del kit, como en la boda de Linda & Emmanuel (`linda-emmanuel/`).\n":""}
 ## Al terminar
 1. Publica la invitaci\xF3n en la carpeta \`${s}/\` del repo \`Foto-Graciela/Invitaciones-FotoGraciela\` (GitHub Pages).
 2. Dame todos los links: repo, commit, p\xE1gina publicada${n.pases?" y una imagen de ejemplo del pase":""}.
