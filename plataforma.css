@@ -1,0 +1,85 @@
+/* Plataforma Foto Estudio Graciela · estilo base (MAESTR-A, formulario, ANFITRIONA, PORTERA) */
+:root{
+  --ink:#241d16;--ink2:#5b4f45;--paper:#f6efe5;--paper2:#fbf7f1;--card:#fff;--line:#e8dccd;--line2:#d9cab8;
+  --acc:#c5572a;--acc2:#a8441c;--acc-s:#f6e1d5;--ok:#2f7d4f;--ok-s:#e2f1e7;--no:#b23b32;--no-s:#f8e1de;--wait:#a26b12;--wait-s:#f8ecd6;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;
+  --r:16px;--sh:0 1px 0 rgba(36,29,22,.04),0 10px 28px -14px rgba(36,29,22,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-weight:400;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.45;-webkit-tap-highlight-color:transparent;min-height:100svh}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0}
+a{color:var(--acc2)}
+svg{display:block}
+[hidden]{display:none!important}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15}
+@keyframes gira{to{transform:rotate(360deg)}}
+@keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes sube{from{transform:translateY(100%)}to{transform:none}}
+
+/* Botones */
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 18px;border-radius:12px;font-weight:500;font-size:.95rem;
+  background:var(--card);border:1.5px solid var(--line2);white-space:nowrap;transition:transform .1s,filter .15s}
+.bt:active{transform:scale(.97)}
+.bt svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.bt.pri{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.bt.acc{background:var(--acc);color:#fff;border-color:var(--acc)}
+.bt.sec{background:transparent}
+.bt.peligro{background:var(--no);color:#fff;border-color:var(--no)}
+.bt.chico{height:36px;padding:0 12px;font-size:.85rem;border-radius:10px}
+.bt.ancho{width:100%}
+.bt:disabled{opacity:.55;pointer-events:none}
+.bt.cargando{position:relative;color:transparent!important}
+.bt.cargando::after{content:"";position:absolute;width:18px;height:18px;border-radius:50%;border:2px solid currentColor;border-color:#fff #fff transparent;animation:gira .7s linear infinite}
+.ib{width:42px;height:42px;display:grid;place-items:center;border-radius:12px}
+.ib:active{background:var(--line)}
+.ib svg{width:23px;height:23px;stroke:var(--ink);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* Campos */
+.campo{display:block;margin-top:14px}
+.campo>span{display:block;font-size:.82rem;font-weight:500;color:var(--ink2);margin-bottom:6px;letter-spacing:.02em}
+.campo>span em{font-style:normal;color:var(--acc)}
+.campo small{display:block;color:var(--ink2);font-size:.78rem;margin-top:4px}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line2);background:var(--paper2);font-size:1rem;outline:none;transition:border-color .15s,background .15s}
+input:focus,select:focus,textarea:focus{border-color:var(--ink);background:#fff}
+textarea{resize:vertical;min-height:84px}
+.fila2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.fila2{grid-template-columns:1fr}}
+
+/* Tarjetas y estructura */
+.card{background:var(--card);border-radius:var(--r);padding:18px;box-shadow:var(--sh)}
+.chip{display:inline-flex;align-items:center;gap:5px;height:26px;padding:0 10px;border-radius:999px;font-size:.76rem;font-weight:500;background:var(--paper);color:var(--ink2);white-space:nowrap}
+.chip.ok{background:var(--ok-s);color:var(--ok)}.chip.no{background:var(--no-s);color:var(--no)}.chip.wait{background:var(--wait-s);color:var(--wait)}.chip.acc{background:var(--acc-s);color:var(--acc2)}
+.vacio{text-align:center;color:var(--ink2);padding:40px 20px}
+.vacio h3{color:var(--ink);font-size:1.5rem;margin-bottom:4px}
+
+/* Acceso */
+.acceso{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 22px;text-align:center;
+  background:radial-gradient(110% 60% at 50% 0%,#efe2d2,var(--paper) 60%)}
+.acceso .logo{font-family:var(--serif);font-weight:700;font-size:2.6rem;letter-spacing:.06em;line-height:1}
+.acceso .logo b{color:var(--acc)}
+.acceso .sub{color:var(--ink2);margin:8px 0 22px;font-size:.95rem}
+.acceso form{width:100%;max-width:360px;text-align:left}
+.acceso .err{color:var(--no);font-size:.88rem;min-height:1.3em;margin-top:10px;text-align:center}
+.acceso .marca{margin-top:28px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2)}
+.ver-clave{position:relative}
+.ver-clave button{position:absolute;right:6px;bottom:6px;height:34px;padding:0 10px;font-size:.8rem;color:var(--ink2)}
+
+/* Diálogo */
+.dlg-fondo{position:fixed;inset:0;z-index:200;background:rgba(36,29,22,.45);display:flex;align-items:center;justify-content:center;padding:18px;animation:entra .2s}
+.dlg{width:100%;max-width:420px;background:#fff;border-radius:18px;padding:20px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.dlg h3{font-size:1.45rem}
+.dlg p{color:var(--ink2);margin-top:6px;font-size:.95rem}
+.dlg-bts{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}
+
+/* Hoja inferior */
+.hoja{position:fixed;inset:0;z-index:150;background:rgba(36,29,22,.4);display:flex;align-items:flex-end;justify-content:center}
+.hoja>.in{width:100%;max-width:560px;max-height:92svh;overflow:auto;background:#fff;border-radius:22px 22px 0 0;padding:10px 18px calc(20px + env(safe-area-inset-bottom));animation:sube .25s ease}
+.tira{width:42px;height:4px;border-radius:4px;background:var(--line2);margin:2px auto 12px}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translate(-50%,20px);opacity:0;z-index:300;background:var(--ink);color:var(--paper);
+  padding:12px 18px;border-radius:14px;font-size:.92rem;transition:.25s;pointer-events:none;max-width:92vw;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.cargador{display:grid;place-items:center;min-height:50svh}
+.cargador::after{content:"";width:34px;height:34px;border-radius:50%;border:3px solid var(--line2);border-top-color:var(--acc);animation:gira .8s linear infinite}

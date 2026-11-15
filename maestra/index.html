@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://foto-graciela.github.io; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' data: blob: https:; connect-src 'self' data: blob: https://firestore.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firebasestorage.googleapis.com https://firebaseinstallations.googleapis.com https://script.google.com https://script.googleusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<title>MAESTR-A · Foto Estudio Graciela</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f6efe5">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icono.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../plataforma.css?v=1794711269">
+<style>
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;height:60px;padding:0 16px;padding-top:env(safe-area-inset-top);box-sizing:content-box;background:rgba(246,239,229,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .logo{font-family:var(--serif);font-weight:700;font-size:1.55rem;letter-spacing:.05em}
+.top .logo b{color:var(--acc)}
+.top .sp{flex:1}
+.top .yo{font-size:.85rem;color:var(--ink2)}
+.cuerpo{display:grid;grid-template-columns:340px 1fr;min-height:calc(100svh - 61px)}
+.lado{border-right:1px solid var(--line);padding:14px;display:flex;flex-direction:column;gap:10px;position:sticky;top:61px;height:calc(100svh - 61px);overflow:auto}
+.filtros{display:flex;gap:6px}
+.filtros button{flex:1;height:32px;border-radius:9px;font-size:.82rem;color:var(--ink2)}
+.filtros button.on{background:var(--ink);color:var(--paper)}
+.ev{position:relative;display:flex;gap:12px;align-items:center;width:100%;text-align:left;padding:10px;border-radius:14px;transition:background .15s}
+.ev:hover{background:#efe5d8}.ev.on{background:#fff;box-shadow:var(--sh)}
+.ev-ic{flex:0 0 42px;height:42px;border-radius:12px;display:grid;place-items:center;font-family:var(--serif);font-weight:700;background:var(--acc-s);color:var(--acc2)}
+.ev-ic.t-xv{background:#ece2f3;color:#6d3f8a}.ev-ic.t-bautizo{background:#dfeef5;color:#2f6f8a}.ev-ic.t-cumple{background:#f5ecd6;color:#8a6a1f}
+.ev-tx{flex:1;min-width:0}.ev-tx b{display:block;font-weight:600}.ev-tx small{display:block;color:var(--ink2);font-size:.8rem}
+.mini{display:flex;gap:4px;margin-top:4px;flex-wrap:wrap}.mini i{font-style:normal;font-size:.68rem;padding:1px 7px;border-radius:999px;background:var(--paper);color:var(--ink2);border:1px solid var(--line)}
+.punto{position:absolute;top:10px;right:10px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px #fff}
+.principal{padding:18px 22px 60px;max-width:900px;width:100%}
+.cab-ev{display:flex;align-items:flex-start;gap:10px}
+.cab-ev h1{font-size:2.1rem}.cab-ev p{color:var(--ink2);font-size:.9rem}
+#atras{display:none}
+.pestanas{display:flex;gap:4px;overflow-x:auto;margin:16px 0;border-bottom:1px solid var(--line);scrollbar-width:none}
+.pestanas button{position:relative;height:42px;padding:0 14px;color:var(--ink2);font-weight:500;font-size:.92rem;white-space:nowrap}
+.pestanas button.on{color:var(--ink)}.pestanas button.on::after{content:"";position:absolute;left:10px;right:10px;bottom:-1px;height:2.5px;border-radius:2px;background:var(--acc)}
+.pestanas button[data-n="1"]::before{content:"";position:absolute;top:9px;right:4px;width:8px;height:8px;border-radius:50%;background:var(--acc)}
+#cuerpo{display:flex;flex-direction:column;gap:14px;animation:entra .25s}
+.card h3{font-size:1.35rem;margin-bottom:10px}
+.cab{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px}.cab h3{margin:0}
+.bts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.cab .bts{margin:0}
+.ayuda{color:var(--ink2);font-size:.9rem}
+.link{color:var(--acc2);font-weight:500;font-size:.85rem;text-decoration:underline;text-underline-offset:3px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.kpi{background:#fff;border-radius:14px;padding:14px;box-shadow:var(--sh)}.kpi b{display:block;font-family:var(--serif);font-size:2rem;line-height:1}.kpi small{color:var(--ink2);font-size:.8rem}
+.kpi.ok b{color:var(--ok)}.kpi.no b{color:var(--no)}
+.pasos{list-style:none;display:flex;flex-direction:column;gap:2px}
+.pasos li{display:flex;align-items:center;gap:10px;padding:9px 4px;border-bottom:1px solid var(--line)}
+.pasos li span{flex:0 0 24px;height:24px;border-radius:50%;border:2px solid var(--line2);display:grid;place-items:center;font-size:.8rem;font-weight:700;color:#fff}
+.pasos li.ok span{background:var(--ok);border-color:var(--ok)}
+.pasos li .link{margin-left:auto}
+.paquetes{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.paq{text-align:left;padding:12px;border-radius:14px;border:1.5px solid var(--line2);background:var(--paper2)}.paq b{display:block}.paq small{color:var(--ink2);font-size:.78rem}
+.paq.on{border-color:var(--acc);background:var(--acc-s)}
+.mods{display:flex;flex-direction:column}
+.mod{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+.mod>div{flex:1}.mod b{display:block;font-weight:600}.mod small{color:var(--ink2);font-size:.85rem}.mod small em{color:var(--acc2);font-style:normal}
+.mod select{max-width:300px}.mod.bloq{opacity:.6}
+.sw{appearance:none;flex:0 0 48px;width:48px;height:28px;border-radius:999px;background:var(--line2);position:relative;cursor:pointer;transition:background .2s;padding:0;border:0}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.sw:checked{background:var(--ok)}.sw:checked::after{transform:translateX(20px)}.sw:disabled{cursor:default}
+.secs{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:10px}
+.sec{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:var(--paper2);cursor:pointer}
+.sec input{width:20px;height:20px;accent-color:var(--acc);flex:0 0 auto}
+.usuarios{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.usr{display:flex;align-items:center;gap:12px;padding:12px;border-radius:14px;background:var(--paper2)}
+.usr.off{opacity:.55}
+.rol{flex:0 0 auto;font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--acc-s);color:var(--acc2)}.rol.r-portero{background:#dfe9f2;color:#2c5c80}
+.ux{flex:1;min-width:0}.ux b{display:block}.ux small{color:var(--ink2);font-size:.8rem}
+.clave{display:flex;align-items:center;gap:8px;margin-top:4px}.clave code{font-size:.9rem;background:#fff;padding:2px 8px;border-radius:6px;border:1px solid var(--line)}
+.ua{display:flex;gap:4px;align-items:center}
+.liga code,.enl code{display:block;padding:10px 12px;border-radius:10px;background:var(--paper2);border:1px solid var(--line);font-size:.85rem;word-break:break-all}
+.refs{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
+.ref{position:relative;aspect-ratio:1;border-radius:12px;background:var(--paper) center/cover;overflow:hidden;text-decoration:none;color:var(--ink)}
+.ref small{position:absolute;left:6px;bottom:6px;font-size:.66rem;background:rgba(255,255,255,.9);padding:1px 6px;border-radius:999px}
+.ref.arch{display:flex;flex-direction:column;justify-content:center;padding:10px;border:1px solid var(--line)}.ref.arch b{font-size:.78rem;word-break:break-all}
+.resp{white-space:pre-wrap;font-family:var(--sans);font-size:.92rem;line-height:1.55;background:var(--paper2);padding:14px;border-radius:12px;max-height:70vh;overflow:auto}
+.prompt{width:100%;min-height:52vh;font-family:ui-monospace,Menlo,monospace;font-size:.82rem;line-height:1.5;margin-top:10px}
+.pasos-prompt{margin:4px 0 0 18px}
+.aviso-amarillo{background:var(--wait-s);color:var(--wait);padding:10px 12px;border-radius:10px;font-size:.88rem;margin-top:10px}
+.enlaces{display:flex;flex-direction:column;gap:14px}
+.enl b{display:block;margin-bottom:6px}.enl-ed{display:flex;gap:8px}
+.foto-ev{display:flex;align-items:center;gap:14px}.foto-ev img{width:84px;height:84px;border-radius:50%;object-fit:cover}.foto-ev span{width:84px;height:84px;border-radius:50%;background:var(--paper);display:grid;place-items:center;font-size:.75rem;color:var(--ink2)}
+.foto-ev input{flex:1}
+.bienvenida-panel{display:grid;place-items:center;min-height:60vh;text-align:center;color:var(--ink2)}
+.bienvenida-panel h2{font-size:2.2rem;color:var(--ink)}
+#detalle:not([hidden])+.bienvenida-panel{display:none}
+@media (max-width:860px){
+  .cuerpo{grid-template-columns:1fr}
+  .lado{position:static;height:auto;border:0}
+  body.con-evento .lado{display:none}
+  body:not(.con-evento) .principal{display:none}
+  #atras{display:grid}
+  .principal{padding:14px 14px 60px}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .paquetes{grid-template-columns:repeat(2,1fr)}
+  .secs{grid-template-columns:1fr}
+  .cab-ev h1{font-size:1.7rem}
+}
+</style>
+</head>
+<body>
+
+<section class="acceso" id="acceso">
+  <div class="logo">MAESTR<b>-</b>A</div>
+  <p class="sub">Panel de Foto Estudio Graciela</p>
+  <form id="formEntrar" autocomplete="on">
+    <label class="campo"><span>Usuario</span><input id="usuario" autocomplete="username" autocapitalize="off" required></label>
+    <label class="campo"><span>Contraseña</span><input id="clave" type="password" autocomplete="current-password" required></label>
+    <button class="bt pri ancho" type="submit" style="margin-top:18px">Entrar</button>
+    <p class="err" id="errEntrar"></p>
+    <p hidden style="text-align:center;margin-top:6px"><a href="#" id="irSetup" style="font-size:.85rem">Primera vez: crear cuenta de administrador</a></p>
+  </form>
+  <p class="marca">Foto Estudio Graciela</p>
+</section>
+
+<section class="acceso" id="setup" hidden>
+  <div class="logo">MAESTR<b>-</b>A</div>
+  <p class="sub">Crea tu cuenta de administrador (solo una vez)</p>
+  <form id="formSetup" autocomplete="off">
+    <label class="campo"><span>Usuario</span><input name="usuario" autocomplete="username" autocapitalize="off" required></label>
+    <label class="campo"><span>Contraseña (mínimo 8)</span><input name="clave" type="password" autocomplete="new-password" required></label>
+    <label class="campo"><span>Repite la contraseña</span><input name="clave2" type="password" autocomplete="new-password" required></label>
+    <label class="campo"><span>Código de configuración</span><input name="codigo" autocapitalize="characters" required></label>
+    <button class="bt acc ancho" type="submit" style="margin-top:18px">Crear mi cuenta</button>
+    <p class="err" id="errSetup"></p>
+    <p style="text-align:center"><a href="#" id="volverAcceso" style="font-size:.85rem">Ya tengo cuenta</a></p>
+  </form>
+</section>
+
+<div id="app" hidden>
+  <header class="top">
+    <div class="logo">MAESTR<b>-</b>A</div>
+    <span class="sp"></span>
+    <span class="yo" id="yo"></span>
+    <button class="ib" id="salir" title="Salir"><svg viewBox="0 0 24 24"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 17l-5-5 5-5M5 12h11"/></svg></button>
+  </header>
+  <div class="cuerpo">
+    <aside class="lado">
+      <button class="bt acc ancho" id="nuevo"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Nuevo evento</button>
+      <input id="buscar" placeholder="Buscar evento…" autocomplete="off">
+      <div class="filtros" id="filtros"><button data-f="proximos" class="on">Próximos</button><button data-f="pasados">Pasados</button><button data-f="todos">Todos</button></div>
+      <div id="lista"></div>
+    </aside>
+    <main class="principal">
+      <div id="detalle" hidden>
+        <div class="cab-ev">
+          <button class="ib" id="atras" aria-label="Atrás"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <div><h1 id="evNombre"></h1><p id="evSub"></p></div>
+        </div>
+        <nav class="pestanas" id="pestanas">
+          <button data-p="resumen" class="on">Resumen</button>
+          <button data-p="paquete">Paquete</button>
+          <button data-p="formulario">Formulario</button>
+          <button data-p="prompt">Prompt para Claude</button>
+          <button data-p="usuarios">Usuarios</button>
+          <button data-p="enlaces">Enlaces</button>
+          <button data-p="datos">Datos</button>
+        </nav>
+        <div id="cuerpo"></div>
+      </div>
+      <div class="bienvenida-panel" id="sinEvento"><div><h2>Bienvenido, Edgar</h2><p>Elige un evento o crea uno nuevo.</p></div></div>
+    </main>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script type="module" src="app.js?v=1794711269"></script>
+</body>
+</html>

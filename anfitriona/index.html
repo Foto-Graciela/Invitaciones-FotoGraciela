@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://foto-graciela.github.io; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' data: blob: https:; connect-src 'self' data: blob: https://firestore.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firebasestorage.googleapis.com https://firebaseinstallations.googleapis.com https://script.google.com https://script.googleusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<title>Anfitriona</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f6efe5">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icono.svg" type="image/svg+xml">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../plataforma.css?v=1794711269">
+<style>
+.cab{position:relative;padding:calc(16px + env(safe-area-inset-top)) 18px 14px;background:linear-gradient(180deg,#efe2d2,var(--paper))}
+.cab-in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:14px}
+.foto{flex:0 0 62px;height:62px;border-radius:50%;background:var(--acc-s) center/cover;box-shadow:0 0 0 3px #fff,0 0 0 5px var(--acc)}
+.cab h1{font-family:'Great Vibes',cursive;font-weight:400;font-size:2.3rem;line-height:1;color:var(--acc2)}
+.cab p{color:var(--ink2);font-size:.85rem;margin-top:2px}
+.cab .sp{flex:1}
+.marcador{max-width:760px;margin:14px auto 0;background:#fff;border-radius:16px;padding:12px 14px;box-shadow:var(--sh)}
+.marcador .nums{display:flex;justify-content:space-between;text-align:center}
+.marcador .nums div b{display:block;font-family:var(--serif);font-size:1.7rem;line-height:1}
+.marcador .nums small{font-size:.72rem;color:var(--ink2)}
+.ok-t{color:var(--ok)}.no-t{color:var(--no)}
+.barra{display:flex;height:8px;border-radius:8px;overflow:hidden;background:var(--paper);margin-top:10px}
+.barra i{display:block;height:100%;transition:width .5s}#barSi{background:var(--ok)}#barNo{background:var(--no)}
+.vistas{position:sticky;top:0;z-index:15;padding:8px 14px;padding-top:calc(8px + env(safe-area-inset-top));background:rgba(246,239,229,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.vistas .in{max-width:760px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.vistas button{position:relative;flex:1;height:40px;border-radius:12px;font-weight:500;font-size:.88rem;color:var(--ink2);white-space:nowrap;padding:0 10px}
+.vistas button.on{background:var(--ink);color:var(--paper)}
+.vistas .nb{position:absolute;top:2px;right:4px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--acc);color:#fff;font-size:.68rem;display:grid;place-items:center}
+main{max-width:760px;margin:0 auto;padding:12px 14px 120px}
+.filtros{display:flex;gap:6px;overflow-x:auto;margin:10px 0 4px;scrollbar-width:none}
+.filtros button{height:32px;padding:0 12px;border-radius:999px;font-size:.82rem;border:1.5px solid var(--line2);white-space:nowrap}
+.filtros button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.cuenta{font-size:.8rem;color:var(--ink2);margin:6px 2px}
+.fam{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:11px 10px;border-radius:14px;background:#fff;margin-top:6px;box-shadow:0 1px 0 rgba(36,29,22,.05)}
+.fam:active{background:var(--paper2)}
+.ini{flex:0 0 40px;height:40px;border-radius:50%;background:var(--acc-s);color:var(--acc2);display:grid;place-items:center;font-family:var(--serif);font-weight:700}
+.fx{flex:1;min-width:0}.fx b{display:block;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fx small{color:var(--ink2);font-size:.78rem}
+.lib{display:flex;align-items:center;gap:12px;margin-top:10px}
+.fab{position:fixed;right:18px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:30;height:56px;padding:0 22px;border-radius:999px;background:var(--acc);color:#fff;font-weight:500;
+  display:flex;align-items:center;gap:8px;box-shadow:0 12px 26px -8px rgba(197,87,42,.7)}
+.fab svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.kpi{background:#fff;border-radius:14px;padding:14px;box-shadow:var(--sh)}.kpi b{display:block;font-family:var(--serif);font-size:2rem;line-height:1}.kpi small{color:var(--ink2);font-size:.8rem}
+.kpi.ok b{color:var(--ok)}.kpi.no b{color:var(--no)}.kpi.acc b{color:var(--acc)}
+#resumen,#entrada{display:flex;flex-direction:column;gap:12px}
+.card h3{font-size:1.35rem;margin-bottom:4px}.ayuda{color:var(--ink2);font-size:.9rem}
+.bts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.url{display:block;font-size:.82rem;word-break:break-all;background:var(--paper2);padding:8px 10px;border-radius:10px;margin-top:6px}
+.fila-e{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.fila-e small{display:block;color:var(--ink2);font-size:.75rem}
+.cab-h{display:flex;align-items:center;justify-content:space-between;gap:10px}.cab-h h2{font-size:1.6rem}
+.seg{display:flex;gap:6px}.seg button{flex:1;height:44px;border-radius:12px;border:1.5px solid var(--line2);font-weight:500;font-size:.88rem}
+.seg button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}.seg button.on.ok{background:var(--ok);border-color:var(--ok)}.seg button.on.no{background:var(--no);border-color:var(--no)}
+.bts-h{display:flex;flex-direction:column;gap:8px;margin-top:18px}.bts-h .bt{height:50px}
+.rojo{color:var(--no)!important;border-color:transparent!important}
+.permiso{display:flex;align-items:center;gap:10px;background:var(--acc-s);color:var(--acc2);border-radius:12px;padding:10px 12px;margin-bottom:10px;width:100%;text-align:left;font-size:.88rem}
+.vacio-todo{text-align:center;padding:30px 10px}.vacio-todo h3{font-size:1.7rem}.vacio-todo p{color:var(--ink2);margin:6px auto 16px;max-width:30ch}
+.vacio-todo .bts{justify-content:center}
+.ia-prev{max-height:46vh;overflow:auto;margin-top:10px;border:1px solid var(--line);border-radius:12px}
+.ia-prev table{width:100%;border-collapse:collapse;font-size:.82rem}.ia-prev th,.ia-prev td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.ia-prev th{position:sticky;top:0;background:var(--paper2)}
+.ia-notas{background:var(--wait-s);color:var(--wait);border-radius:10px;padding:10px 12px;font-size:.85rem;margin-top:10px}
+@media (min-width:700px){.kpis{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<section class="acceso" id="acceso">
+  <div class="logo">ANFITRI<b>O</b>NA</div>
+  <p class="sub">Sus invitados, en un solo lugar</p>
+  <form id="formEntrar" autocomplete="on">
+    <label class="campo"><span>Usuario</span><input id="usuario" autocomplete="username" autocapitalize="off" required></label>
+    <label class="campo"><span>Contraseña</span><input id="clave" type="password" autocomplete="current-password" required></label>
+    <button class="bt pri ancho" type="submit" style="margin-top:18px">Entrar</button>
+    <p class="err" id="errEntrar"></p>
+  </form>
+  <p class="marca">Foto Estudio Graciela</p>
+</section>
+
+<div id="app" hidden>
+  <header class="cab">
+    <div class="cab-in">
+      <div class="foto" id="evFoto"></div>
+      <div><h1 id="evNombre"></h1><p id="evFecha"></p></div>
+      <span class="sp"></span>
+      <button class="ib" id="salir" aria-label="Salir"><svg viewBox="0 0 24 24"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 17l-5-5 5-5M5 12h11"/></svg></button>
+    </div>
+    <div class="marcador">
+      <div class="nums">
+        <div><b class="ok-t" id="kSi">0</b><small>asistirán</small></div>
+        <div><b class="no-t" id="kNo">0</b><small>no asistirán</small></div>
+        <div><b id="kSin">0</b><small>sin responder</small></div>
+        <div><b id="kPases">0</b><small>pases en total</small></div>
+      </div>
+      <div class="barra"><i id="barSi"></i><i id="barNo"></i></div>
+    </div>
+  </header>
+  <nav class="vistas"><div class="in" id="vistas">
+    <button data-v="lista" class="on">Invitados</button>
+    <button data-v="liberar" id="tabLiberar" hidden>Por liberar <span class="nb" id="nLiberar" hidden>0</span></button>
+    <button data-v="entrada" id="tabEntrada" hidden>Entrada</button>
+    <button data-v="resumen">Resumen y Excel</button>
+  </div></nav>
+  <main>
+    <button class="permiso" id="permisoAvisos" hidden>🔔 Activar avisos para enterarse cuando alguien confirme</button>
+    <section id="v-lista">
+      <input id="buscar" type="search" placeholder="Buscar familia, persona o mesa…" autocomplete="off">
+      <div class="filtros" id="filtros">
+        <button data-f="todas" class="on">Todas</button><button data-f="si">Asistirán</button><button data-f="no">No asistirán</button><button data-f="sin">Sin responder</button>
+      </div>
+      <p class="cuenta" id="cuenta"></p>
+      <div id="lista"></div>
+      <div class="vacio-todo" id="vacioTodo" hidden>
+        <h3>Agreguen a sus invitados</h3>
+        <p>Una por una con el botón “Agregar”, o todos de golpe desde su Excel (lo acomodamos con inteligencia artificial).</p>
+        <div class="bts"><button class="bt pri" id="vacioAgregar">Agregar familia</button><button class="bt" id="vacioExcel">Subir mi Excel</button></div>
+      </div>
+    </section>
+    <section id="v-liberar" hidden><div id="listaLiberar"></div></section>
+    <section id="v-entrada" hidden><div id="entrada"></div></section>
+    <section id="v-resumen" hidden><div id="resumen"></div></section>
+  </main>
+  <button class="fab" id="agregar"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Agregar</button>
+</div>
+<input type="file" id="archivoExcel" accept=".xlsx,.xls,.csv,.ods" hidden>
+<div class="hoja" id="hoja" hidden></div>
+<div class="toast" id="toast"></div>
+<script type="module" src="app.js?v=1794711269"></script>
+</body>
+</html>
