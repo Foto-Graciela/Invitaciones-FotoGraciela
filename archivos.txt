@@ -1,22 +1,22 @@
-anfitriona/app.js
-anfitriona/c-CW6S5UHN.js
-anfitriona/c-HT2PD3IE.js
-anfitriona/c-NGV6YVEC.js
-anfitriona/c-Z6SMJ3PX.js
-anfitriona/icono.svg
-anfitriona/index.html
-anfitriona/manifest.json
-icono.svg
-index.html
-maestra/app.js
-maestra/icono.svg
-maestra/index.html
-maestra/manifest.json
-plataforma.css
-portera/app.js
-portera/c-NRMLNRNR.js
-portera/c-OYRBFB6C.js
-portera/icono.svg
-portera/index.html
-portera/manifest.json
-portera/sw.js
+f1c61a38b8384aa4858d63b7a50d1d0a48f0624f	anfitriona/app.js
+a4d3a94fd815dda711e005c6df44bf060f942031	anfitriona/c-CW6S5UHN.js
+5717556fe61e78a04c3877f50474ed25b6f87484	anfitriona/c-OOTBT33O.js
+b3eb8bcdcce9f1e071d27abc50f5e7e51d451d88	anfitriona/c-SERRC35A.js
+1fcf897256dd6d6c5e49b84727bc4b295c4688a4	anfitriona/c-Z6SMJ3PX.js
+414ca6e1005ae8a28abbc2a62c9a0db58a7d6a59	anfitriona/icono.svg
+5979029e247be7ab521d8eebf07373ce3230960a	anfitriona/index.html
+1776aa6f9b2813075715fc93ceb3db9192b5ae23	anfitriona/manifest.json
+da9b07fa745090897c17630e02a098427153dc86	icono.svg
+c3a1258ee563293edcbec7593962f589666b986e	index.html
+9c77381c6aed3da2f36e5587eb388fadfec13338	maestra/app.js
+fc3983fd2b4e3d54f8cf67373112823306a7dea5	maestra/icono.svg
+c45acb76dd1cb290295f70b9d3c0ebf1edad5a0a	maestra/index.html
+3ab931c16cf0416ac6ccbce28ec05d10fbd4b6b7	maestra/manifest.json
+7424bf2b47e8d1f0dee59c5555c120eb6f4ba364	plataforma.css
+f3463179ec08f70db63b516e55fc6d35754c4d3d	portera/app.js
+91850a1b3720b139c6bdcc5f697837cdf111497e	portera/c-NRMLNRNR.js
+fad13442c97612e1d37cde9e930f020f852935ce	portera/c-OYRBFB6C.js
+648ae886a81658d99976f8fb59f2ef992e939b43	portera/icono.svg
+da1b37d9c20c3d9db70c5e9ccd85c4847013a04a	portera/index.html
+9e646f96ac5ec6c829872f169f40f65e9a11e763	portera/manifest.json
+ac02cf1a64d20a9cc9b7ba25a7da6da15642523d	portera/sw.js
