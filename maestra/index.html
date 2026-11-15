@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' data: blob: https:; connect-src 'self' data: blob: https://*.googleapis.com https://firebasestorage.googleapis.com https://script.google.com https://script.googleusercontent.com wss://*.firebaseio.com https://*.firebaseio.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' data: blob: https:; connect-src 'self' data: blob: https://firestore.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firebasestorage.googleapis.com https://firebaseinstallations.googleapis.com https://script.google.com https://script.googleusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <title>MAESTR-A · Foto Estudio Graciela</title>
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#f6efe5">
@@ -11,7 +11,7 @@
 <link rel="icon" href="icono.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../plataforma.css?v=1794708749">
+<link rel="stylesheet" href="../plataforma.css?v=1794710388">
 <style>
 .top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;height:60px;padding:0 16px;padding-top:env(safe-area-inset-top);box-sizing:content-box;background:rgba(246,239,229,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .top .logo{font-family:var(--serif);font-weight:700;font-size:1.55rem;letter-spacing:.05em}
@@ -112,7 +112,7 @@
     <label class="campo"><span>Contraseña</span><input id="clave" type="password" autocomplete="current-password" required></label>
     <button class="bt pri ancho" type="submit" style="margin-top:18px">Entrar</button>
     <p class="err" id="errEntrar"></p>
-    <p style="text-align:center;margin-top:6px"><a href="#" id="irSetup" style="font-size:.85rem">Primera vez: crear cuenta de administrador</a></p>
+    <p hidden style="text-align:center;margin-top:6px"><a href="#" id="irSetup" style="font-size:.85rem">Primera vez: crear cuenta de administrador</a></p>
   </form>
   <p class="marca">Foto Estudio Graciela</p>
 </section>
@@ -167,6 +167,6 @@
   </div>
 </div>
 <div class="toast" id="toast"></div>
-<script type="module" src="app.js?v=1794708749"></script>
+<script type="module" src="app.js?v=1794710388"></script>
 </body>
 </html>
