@@ -900,7 +900,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
   const esc = t => String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const plural = (n, a, b) => n + ' ' + (n === 1 ? a : b);
   const listaLista = FG().then(fg => fg.familias()).then(l => {
-    LIEM.fams = l.map(f => ({ i: f.id, n: f.n, pa: +f.pa || 0, pk: +f.pk || 0, q: norm(f.n + ' ' + f.id) }));
+    LIEM.fams = l.map(f => ({ i: f.id, n: f.n, pa: +f.pa || 0, pk: +f.pk || 0, r: f.resp || null, q: norm(f.n + ' ' + f.id) }));
     const q = $('rsQ'); if (q && q.value) q.dispatchEvent(new Event('input'));
   }).catch(() => { $('rsHelp').textContent = 'No pudimos cargar la lista de invitados. Revisa tu conexión a internet y vuelve a abrir la invitación.'; });
   const byId = id => LIEM.fams.find(f => f.i === id);
@@ -1114,7 +1114,12 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
     const pf = new URLSearchParams(location.search).get('f');
     const st = store.get();
     if(pf && byId(pf) && !(st && st.id === pf)){ showFamily(byId(pf)); return; }
-    if(!st) return; const f = byId(st.id); if(!f) return;
+    if(!st) return; const f = byId(st.id); if(!f){ store.clear(); return; }
+    // manda la plataforma: si los novios la regresaron a "Sin responder" (o la cambiaron), se respeta
+    if(f.r !== st.st){
+      if(!f.r){ store.clear(); showFamily(f); return; }
+      store.set({ id: f.i, st: f.r }); st.st = f.r; st.t = 0;
+    }
     // si su pase está visible, mostrarlo; si lo pidió hace poco, seguir esperando; si no, ofrecer pedirlo de nuevo
     if(st.st === 'si') FG().then(fg => fg.pase(f.i)).then(p => {
       if(p && p.codigo) showPass(f, p.codigo, Math.round((p.hasta - Date.now()) / 1000), true);
