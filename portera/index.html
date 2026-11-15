@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Portera</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#241d16">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icono.svg" type="image/svg+xml">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../plataforma.css">
+<style>
+body.lock{overflow:hidden}
+.cab{position:sticky;top:0;z-index:20;background:var(--ink);color:var(--paper);padding:calc(10px + env(safe-area-inset-top)) 14px 10px}
+.cab-in{max-width:640px;margin:0 auto}
+.fila{display:flex;align-items:center;gap:10px}
+.fila h1{flex:1;font-size:1.35rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fila .ib svg{stroke:var(--paper)}
+.cuenta{display:flex;align-items:baseline;gap:6px;margin-top:6px;font-size:.85rem;color:#d9cbbb}
+.cuenta b{font-family:var(--serif);font-size:1.7rem;color:#fff;line-height:1}
+.barra{height:6px;border-radius:6px;background:rgba(255,255,255,.15);margin-top:8px;overflow:hidden}.barra i{display:block;height:100%;width:0;background:var(--acc);transition:width .4s}
+.vistas{display:flex;gap:4px;margin-top:10px}
+.vistas button{flex:1;height:38px;border-radius:10px;color:#d9cbbb;font-weight:500;font-size:.88rem}
+.vistas button.on{background:var(--paper);color:var(--ink)}
+.estado{display:flex;gap:6px;margin-top:8px;font-size:.78rem}
+.estado span{padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.12)}
+main{max-width:640px;margin:0 auto;padding:12px 14px 40px}
+.camara{position:relative;border-radius:22px;overflow:hidden;background:#000;aspect-ratio:3/4;max-height:68svh;width:100%}
+.camara video{width:100%;height:100%;object-fit:cover;display:block}
+.mira{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.mira i{width:62%;aspect-ratio:1;border-radius:24px;box-shadow:0 0 0 2000px rgba(0,0,0,.35);border:3px solid rgba(255,255,255,.85)}
+.cam-txt{text-align:center;color:var(--ink2);margin-top:12px;font-size:.92rem}
+.cam-err{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#fff;text-align:center;padding:24px;background:#000}
+.rechazo{position:absolute;left:12px;right:12px;bottom:12px;background:var(--no);color:#fff;border-radius:14px;padding:14px;text-align:center;font-weight:500;animation:entra .2s}
+.ayuda{color:var(--ink2);font-size:.9rem}.c{text-align:center;padding:24px 0}
+.fam{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:12px;border-radius:14px;background:#fff;margin-top:6px}
+.fx{flex:1;min-width:0}.fx b{display:block;font-weight:500}.fx small{color:var(--ink2);font-size:.8rem}
+.seg{display:flex;gap:6px;margin-bottom:8px}.seg button{flex:1;height:38px;border-radius:10px;border:1.5px solid var(--line2);font-size:.85rem;font-weight:500}
+.seg button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tarjeta{position:fixed;inset:0;z-index:60;background:rgba(36,29,22,.55);display:flex;align-items:flex-end;justify-content:center}
+.tarjeta .in{width:100%;max-width:560px;max-height:92svh;overflow:auto;background:#fff;border-radius:24px 24px 0 0;padding:18px 18px calc(18px + env(safe-area-inset-bottom));animation:sube .25s}
+.sello{background:var(--ok);color:#fff;text-align:center;font-weight:600;border-radius:12px;padding:10px;margin-bottom:12px;font-size:1.05rem}
+.t-cab{display:flex;align-items:flex-start;gap:12px}.t-cab>div:first-child{flex:1}
+.t-cab h2{font-size:1.8rem}.t-cab p{color:var(--ink2)}
+.cont{text-align:center;background:var(--paper);border-radius:14px;padding:6px 12px}.cont b{font-family:var(--serif);font-size:2rem;line-height:1;display:block}.cont small{font-size:.75rem;color:var(--ink2)}
+.alerta{border-radius:12px;padding:10px 12px;margin-top:12px;font-weight:500}
+.alerta.no{background:var(--no-s);color:var(--no)}.alerta.wait{background:var(--wait-s);color:var(--wait)}.alerta.ok{background:var(--ok-s);color:var(--ok)}
+.personas{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.per{display:flex;align-items:center;gap:12px;padding:12px;border-radius:14px;background:var(--paper2);text-align:left;width:100%}
+.circ{flex:0 0 32px;height:32px;border-radius:50%;border:2.5px solid var(--line2);display:grid;place-items:center;font-weight:700;color:#fff}
+.per.dentro{background:var(--ok-s)}.per.dentro .circ{background:var(--ok);border-color:var(--ok)}
+.pn{flex:1}.pn i{font-style:normal;font-size:.72rem;background:var(--acc-s);color:var(--acc2);padding:1px 7px;border-radius:999px;margin-left:4px}
+.per small{color:var(--ok);font-size:.75rem}
+.t-bts{display:flex;flex-direction:column;gap:8px;margin-top:16px}.t-bts .bt{height:52px;font-size:1rem}
+</style>
+</head>
+<body>
+<section class="acceso" id="acceso">
+  <div class="logo">PORTER<b>A</b></div>
+  <p class="sub">Control de entrada</p>
+  <form id="formEntrar" autocomplete="on">
+    <label class="campo"><span>Usuario</span><input id="usuario" autocomplete="username" autocapitalize="off" required></label>
+    <label class="campo"><span>Contraseña</span><input id="clave" type="password" autocomplete="current-password" required></label>
+    <button class="bt pri ancho" type="submit" style="margin-top:18px">Entrar</button>
+    <p class="err" id="errEntrar"></p>
+  </form>
+  <p class="marca">Foto Estudio Graciela</p>
+</section>
+
+<div id="app" hidden>
+  <header class="cab"><div class="cab-in">
+    <div class="fila"><h1 id="evNombre"></h1>
+      <button class="ib" id="salir" aria-label="Salir"><svg viewBox="0 0 24 24"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 17l-5-5 5-5M5 12h11"/></svg></button></div>
+    <div class="cuenta"><b id="kDentro">0</b> dentro de <span id="kEsperados">0</span> esperados</div>
+    <div class="barra"><i id="barDentro"></i></div>
+    <div class="estado"><span id="red" hidden>Sin señal · se guarda y se sube después</span><span id="pendSync" hidden>Subiendo entradas…</span></div>
+    <nav class="vistas" id="vistas"><button data-v="escanear" class="on">Escanear</button><button data-v="buscar">Buscar</button><button data-v="llegaron">Lista</button></nav>
+  </div></header>
+  <main>
+    <section id="v-escanear">
+      <div class="camara">
+        <video id="video" playsinline muted autoplay></video>
+        <div class="mira"><i></i></div>
+        <div class="cam-err" id="camError" hidden><p>Necesito permiso para usar la cámara.</p><button class="bt acc" id="reintentarCam">Activar cámara</button></div>
+        <div class="rechazo" id="rechazo" hidden></div>
+      </div>
+      <p class="cam-txt">Apunta al código QR del pase</p>
+    </section>
+    <section id="v-buscar" hidden>
+      <input id="buscar" type="search" placeholder="Apellido, nombre o mesa…" autocomplete="off">
+      <div id="resultados"></div>
+    </section>
+    <section id="v-llegaron" hidden>
+      <div class="seg" id="segLleg"><button data-m="llegaron" class="on">Llegaron</button><button data-m="incompletas">Incompletas</button><button data-m="faltan">Faltan</button></div>
+      <div id="listaLlegaron"></div>
+    </section>
+  </main>
+</div>
+<div class="tarjeta" id="tarjeta" hidden><div class="in"></div></div>
+<div class="toast" id="toast"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

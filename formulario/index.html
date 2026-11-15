@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Su invitación · Foto Estudio Graciela</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f6efe5">
+<meta property="og:title" content="Datos para su invitación · Foto Estudio Graciela">
+<meta property="og:description" content="Llenen aquí los datos y fotos de su evento. Se guarda solo.">
+<link rel="icon" href="../icono.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../plataforma.css">
+<style>
+body{background:radial-gradient(120% 40% at 50% 0%,#efe2d2,var(--paper) 55%) fixed}
+.hero{text-align:center;padding:calc(36px + env(safe-area-inset-top)) 22px 10px}
+.hero .marca{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink2)}
+.hero h1{font-family:'Great Vibes',cursive;font-weight:400;font-size:3.2rem;line-height:1.1;color:var(--acc2);margin-top:10px}
+.hero p{color:var(--ink2)}
+.hero .intro{max-width:34ch;margin:14px auto 0;font-size:.98rem}
+main{max-width:640px;margin:0 auto;padding:10px 16px 140px}
+.prog{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:12px;max-width:640px;margin:0 auto;padding:12px 16px;padding-top:calc(12px + env(safe-area-inset-top));background:linear-gradient(var(--paper) 70%,transparent)}
+.prog .b{flex:1;height:6px;border-radius:6px;background:var(--line);overflow:hidden}.prog .b i{display:block;height:100%;width:0;background:var(--acc);transition:width .4s}
+.prog small{font-size:.78rem;color:var(--ink2);white-space:nowrap}
+.sec{margin-top:14px;animation:entra .4s both}
+.sec-cab{display:flex;gap:12px;align-items:flex-start;margin-bottom:4px}
+.sec-cab .num{flex:0 0 32px;height:32px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-weight:600;font-size:.9rem}
+.sec-cab h2{font-size:1.6rem}.sec-cab p{color:var(--ink2);font-size:.9rem;margin-top:2px}
+.sino{display:flex;gap:8px}.sino button{flex:1;height:44px;border-radius:12px;border:1.5px solid var(--line2);background:var(--paper2);font-weight:500}
+.sino button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.lista>.item{border:1.5px dashed var(--line2);border-radius:14px;padding:4px 12px 12px;margin-top:10px}
+.item-cab{display:flex;justify-content:space-between;align-items:center;padding-top:8px}
+.item-cab b{width:24px;height:24px;border-radius:50%;background:var(--acc-s);color:var(--acc2);display:grid;place-items:center;font-size:.8rem}
+.quitar,.quitarArch{width:30px;height:30px;border-radius:50%;background:var(--paper);color:var(--ink2);font-size:.85rem}
+.agregar{margin-top:10px}
+.mini-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:8px}
+.mg{position:relative;aspect-ratio:1;border-radius:12px;overflow:hidden;background:var(--paper)}
+.mg img{width:100%;height:100%;object-fit:cover}
+.mg .doc{display:grid;place-items:center;height:100%;padding:8px;font-size:.7rem;text-align:center;word-break:break-all;color:var(--ink2)}
+.mg .quitarArch{position:absolute;top:4px;right:4px;background:rgba(255,255,255,.92)}
+.subir{position:relative;aspect-ratio:1;border-radius:12px;border:2px dashed var(--line2);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink2);cursor:pointer;background:var(--paper2)}
+.subir span{font-size:2rem;line-height:1;font-weight:300}.subir small{font-size:.75rem}
+.subir input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.subiendo{margin-top:8px;font-size:.8rem;color:var(--ink2)}.subiendo i{display:block;height:4px;border-radius:4px;background:var(--acc);width:0;margin-top:4px;transition:width .3s}
+.pie{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--paper) 35%)}
+.pie .in{max-width:640px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.pie small{flex:1;color:var(--ink2);font-size:.82rem}
+.pie .bt{height:50px;padding:0 26px;border-radius:999px}
+.mensaje{max-width:440px;margin:30px auto;text-align:center}.mensaje h2{font-size:2rem}.mensaje p{color:var(--ink2);margin-top:8px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="marca">Foto Estudio Graciela · Invitaciones</div>
+  <h1 id="titulo">Su invitación</h1>
+  <p id="tipoEv"></p>
+  <p class="intro">Llenen aquí los datos y fotos de su evento. <b>Se guarda solo</b>: pueden cerrar y continuar después desde esta misma liga.</p>
+</header>
+<div class="cargador" id="cargando"></div>
+<div class="mensaje card" id="mensaje" hidden><h2 id="msgT"></h2><p id="msgD"></p></div>
+<div id="formulario" hidden>
+  <div class="prog"><div class="b"><i id="progBar"></i></div><small id="progTxt"></small></div>
+  <main id="secciones"></main>
+  <div class="pie"><div class="in"><small id="guardado">Se guarda automáticamente</small><button class="bt acc" id="enviar">Enviar todo</button></div></div>
+</div>
+<div class="toast" id="toast"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
