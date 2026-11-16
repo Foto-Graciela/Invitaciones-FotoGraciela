@@ -21,7 +21,7 @@ eceb4c5d470160c7b4ca69129c062858959551a8	linda-emmanuel/fotos/04.jpg
 10b251c4ca99bd53ab904b4b9ee5f06daa623ce4	linda-emmanuel/fotos/06.jpg
 cad7c57cfba6630d5981d8300a862aa8da1cff09	linda-emmanuel/fotos/07.jpg
 2c216847724235792562fecf2d145fe5f9dbd189	linda-emmanuel/fotos/perfil.jpg
-56c818ba5091f85da802d33ed3d55cfed4333ec5	linda-emmanuel/index.html
+3f4ddb162db0de552afc173e57b3920f47e19981	linda-emmanuel/index.html
 2e8c9c0528f70302c07438e6ff79b8193056618c	linda-emmanuel/tema.css
 83b457aa32affd98dfcd3e75d37f8da7b761e399	logo-graciela.png
 e72533509a35683eafaea05f185e23947e3bf8ee	maestra/index.html

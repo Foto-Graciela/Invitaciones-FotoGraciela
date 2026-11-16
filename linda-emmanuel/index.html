@@ -230,7 +230,13 @@ p{font-size:1.27rem;color:var(--ink-soft)}
 .sw i{position:relative;width:54px;height:54px;border-radius:50%;box-shadow:0 6px 14px -6px rgba(0,0,0,.25)}
 .sw i::after{content:"";position:absolute;left:50%;top:50%;width:72px;height:1.5px;background:var(--rg-deep);transform:translate(-50%,-50%) rotate(-45deg)}
 .sw-note{margin-top:1.3rem;font-style:italic;font-size:1.13rem}
-.palette{display:flex;justify-content:center;margin:1.8rem auto 0;max-width:300px;height:10px;border-radius:10px;overflow:hidden}
+.suggested{margin-top:2.6rem;padding-top:2.2rem;border-top:1px solid rgba(169,103,90,.18)}
+.suggested h3{font-family:var(--sans);font-weight:400;font-size:.87rem;letter-spacing:.35em;text-transform:uppercase;color:var(--azul);margin-bottom:1.2rem}
+.sugg{display:flex;justify-content:center;gap:.35rem}
+.sugg .sw{gap:.5rem;font-size:.6rem;letter-spacing:.1em;width:54px;text-align:center;line-height:1.35}
+.sugg .sw i{width:38px;height:38px;box-shadow:0 0 0 3px #fff,0 0 0 4px rgba(169,103,90,.25),0 6px 12px -6px rgba(0,0,0,.25)}
+.sugg .sw i::after{content:none}
+.palette{display:flex;justify-content:center;margin:1.6rem auto 0;max-width:300px;height:10px;border-radius:10px;overflow:hidden}
 .palette span{flex:1}
 
 /* ---------- Kids ---------- */
@@ -626,6 +632,18 @@ footer .thanks{font-style:italic;font-size:1.30rem;margin:1.6rem auto 0;max-widt
         <div class="sw"><i style="background:#1F2A44"></i>Azul marino</div>
       </div>
       <p class="sw-note">Con cariño les pedimos evitar estos colores.</p>
+    </div>
+    <div class="suggested">
+      <h3>Paleta sugerida</h3>
+      <div class="sugg">
+        <div class="sw"><i style="background:#8391A5"></i>Azul gris</div>
+        <div class="sw"><i style="background:#BFC4CC"></i>Plata</div>
+        <div class="sw"><i style="background:#B7A79B"></i>Topo</div>
+        <div class="sw"><i style="background:#D8B7AE"></i>Nude</div>
+        <div class="sw"><i style="background:#C98A7D"></i>Rosa palo</div>
+      </div>
+      <div class="palette" aria-hidden="true"><span style="background:#8391A5"></span><span style="background:#BFC4CC"></span><span style="background:#B7A79B"></span><span style="background:#D8B7AE"></span><span style="background:#C98A7D"></span></div>
+      <p class="sw-note">Nos encantaría verlos en estos tonos.</p>
     </div>
   </div>
 </section>
