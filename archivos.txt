@@ -1,4 +1,4 @@
-b19468126ee62dd5b069abb88d7dd72301b0b29e	anfitriona/app.js
+ef373a0178669c8f3cbea7e6e575dffefe7c6a61	anfitriona/app.js
 a4d3a94fd815dda711e005c6df44bf060f942031	anfitriona/c-CW6S5UHN.js
 5717556fe61e78a04c3877f50474ed25b6f87484	anfitriona/c-OOTBT33O.js
 b3eb8bcdcce9f1e071d27abc50f5e7e51d451d88	anfitriona/c-SERRC35A.js
@@ -8,7 +8,7 @@ adda45155c23204dec3db671b0ba82d65863422a	anfitriona/icono-180.png
 50da4ccc49f3864cca5a922dc10860d7489aa0f2	anfitriona/icono-512.png
 87f7b23f464d0ff8fe36adf60c7332c75bf60e26	anfitriona/icono-mask.png
 414ca6e1005ae8a28abbc2a62c9a0db58a7d6a59	anfitriona/icono.svg
-bfc63835dc7d646081c6ca704b0c341ab7a49080	anfitriona/index.html
+7fe0d9c64b446eebfbb4d8cd6f043471e8c3cab7	anfitriona/index.html
 4e2c9c98824f97eee28630d366db39a6bb0eab68	anfitriona/manifest.json
 3db0e3f8c7205912acf7713a75b4ff2c496cbb14	anfitriona/sw.js
 da9b07fa745090897c17630e02a098427153dc86	icono.svg
@@ -19,10 +19,10 @@ aa6c0bab5c5c92e363474f8b04166f47f668d5c5	maestra/icono-192.png
 64b8f5768388c95251a0eef2f94107a61ef202b6	maestra/icono-512.png
 bf4de636ab8e0b490e505f1e40e275acd4368d71	maestra/icono-mask.png
 fc3983fd2b4e3d54f8cf67373112823306a7dea5	maestra/icono.svg
-1d5fe8cae230eda05c8d2ae050b70499ed8f5b5a	maestra/index.html
+b8a1afba76226aead4113eb0e1256c9d6e4ebdac	maestra/index.html
 6405da677c3c52f4358e8f498c7e50a526f9bc92	maestra/manifest.json
 3db0e3f8c7205912acf7713a75b4ff2c496cbb14	maestra/sw.js
-7424bf2b47e8d1f0dee59c5555c120eb6f4ba364	plataforma.css
+f2262758776284200e0e129a058218b3b5f289c2	plataforma.css
 d1f0e783ce8c13323af2bb560823d72f2aa53370	portera/app.js
 91850a1b3720b139c6bdcc5f697837cdf111497e	portera/c-NRMLNRNR.js
 fad13442c97612e1d37cde9e930f020f852935ce	portera/c-OYRBFB6C.js
@@ -31,6 +31,6 @@ bb62b435dd52c015b7e2ec9dccc496648d729a13	portera/icono-192.png
 829f06a8cb5f5c7d023f6a0cb1b90becc5a9b93a	portera/icono-512.png
 c85b6004b53226127d04db9062bbca771053130f	portera/icono-mask.png
 648ae886a81658d99976f8fb59f2ef992e939b43	portera/icono.svg
-2c01e036c7b7e8a8945fe99e1418525e011c5ddf	portera/index.html
+c5606357e65eb7b2b613b7a6af022648c821f156	portera/index.html
 87232cd3732c1ec618537793dd4972a95cddb71b	portera/manifest.json
-0fb62b7cbd3ff30482bdaf2c491beb2d60e71695	portera/sw.js
+01344bd0b979033807ec5bb7321ff52b28a9a053	portera/sw.js

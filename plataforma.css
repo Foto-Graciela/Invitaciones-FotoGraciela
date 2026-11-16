@@ -83,3 +83,5 @@ textarea{resize:vertical;min-height:84px}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 .cargador{display:grid;place-items:center;min-height:50svh}
 .cargador::after{content:"";width:34px;height:34px;border-radius:50%;border:3px solid var(--line2);border-top-color:var(--acc);animation:gira .8s linear infinite}
+
+.liga-ok{margin:6px 0 2px;padding:10px 12px;border-radius:10px;background:var(--acc-s,#fbe9e1);color:var(--ink,#241d16);font-size:.88rem;line-height:1.4}
