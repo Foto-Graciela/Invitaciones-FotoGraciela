@@ -1,6 +1,6 @@
 // PORTERA · funciona sin internet en el salón: guarda la app en el teléfono
 // (red primero para tener siempre la versión nueva; si no hay señal, usa la copia guardada)
-const CACHE = 'portera-1794854520';
+const CACHE = 'portera-1794859483';
 const ARCHIVOS = ['./', 'index.html', 'app.js', 'icono.svg', 'manifest.json', '../plataforma.css', 'c-NRMLNRNR.js','c-OYRBFB6C.js'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(ARCHIVOS)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => {
