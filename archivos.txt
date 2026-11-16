@@ -3,12 +3,12 @@ ccaa75f77c71ff8877c3dc79641a7010c70cc78b	album/comun/app.js
 1fcf897256dd6d6c5e49b84727bc4b295c4688a4	album/comun/v-SOXTFDPX.js
 d763e6834b964f24550869f680afcce164fd2161	album/comun/v-YSTZNG4X.js
 62431a119722a99782e5c6525d4cc77946109ecd	album/icono.svg
-f3360bb8031a7fa0b388ad747d05bf83f4cdded8	album/index.html
-bcafa205cb50cdfdea339683e3a4f7d575966a88	album/novios/index.html
+04ae9a53b8b6d6bf0ac4c8f83178961a902e0f31	album/index.html
+3f42c3b14626e6567e6d134ed6cbe16389421eef	album/novios/index.html
 8e6e048ff569425bc2ab7d250b3ff39359a5ebd6	album/novios/manifest.json
 da72012e682ee67c8d3bbdc1a04809678275c432	anfitriona/index.html
 3a7c0da906558538b1d02c438c4aab358e7b8f11	formulario/app.js
-1c6b150af18a5bb2de582e3bc4aad6828d62ed41	formulario/index.html
+e9b5d8fb8d47778e20531d3f1f3fb1c6c8f64da4	formulario/index.html
 da9b07fa745090897c17630e02a098427153dc86	icono.svg
 d4a7b0ae253d171bb4f0413c01e6aaa7c4abf782	index.html
 75cb3f20d9bc5e5ece3789d986f0694256a60817	kit/invitacion-kit.js
@@ -21,7 +21,8 @@ eceb4c5d470160c7b4ca69129c062858959551a8	linda-emmanuel/fotos/04.jpg
 10b251c4ca99bd53ab904b4b9ee5f06daa623ce4	linda-emmanuel/fotos/06.jpg
 cad7c57cfba6630d5981d8300a862aa8da1cff09	linda-emmanuel/fotos/07.jpg
 2c216847724235792562fecf2d145fe5f9dbd189	linda-emmanuel/fotos/perfil.jpg
-c243017c5bbeae8ca95b762ee15f01cff5260600	linda-emmanuel/index.html
+1e3a03ce31de172617f65782ab8167b2217fdcf5	linda-emmanuel/index.html
+42b76e210116c7f3ea2de7f293f2cd62171c5448	linda-emmanuel/memoria-4x6.jpg
 d1b73ad8ead83778f6671a20b673644d6e411494	linda-emmanuel/portada.jpg
 2e8c9c0528f70302c07438e6ff79b8193056618c	linda-emmanuel/tema.css
 83b457aa32affd98dfcd3e75d37f8da7b761e399	logo-graciela.png
